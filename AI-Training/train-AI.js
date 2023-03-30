@@ -52,7 +52,7 @@ select("SELECT input, output FROM dataset")
 function start() {
   const nn = new NeuralNetwork(625, 20, 10);
     
-  for (let i = 0; i < 150000; i++) {
+  for (let i = 0; i < 100000; i++) {
     for (let j = 0; j < dataset.length; j++) {
       const singleTarget = Array(10).fill(0)
       singleTarget[target[j]] = 1

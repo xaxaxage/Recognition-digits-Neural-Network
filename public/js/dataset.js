@@ -1,7 +1,7 @@
 const inputs = []
 const numbers = []
 
-const buttons = document.getElementsByClassName('number')
+const buttons = document.getElementsByClassName('digit')
 // const divs = document.querySelectorAll('.painter>div')
 
 const pressingNumberButton = async () => {

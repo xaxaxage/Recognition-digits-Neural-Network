@@ -1,22 +1,38 @@
 const divs = document.querySelectorAll('.painter>div')
-const clearButton = document.querySelector('#clear')
+const clearButton = document.querySelector('#clear-button')
 
 let isButtonPressed = false
 
-document.body.addEventListener('mousedown', () => {
+document.body.onmousedown = (e) => {
+   isButtonPressed = true
+   e.preventDefault()
+}
+
+document.body.onmouseup = (e) => {
+   isButtonPressed = false
+   e.preventDefault()
+}
+
+document.body.addEventListener('touchstart', () => {
    isButtonPressed = true
 })
 
-document.body.addEventListener('mouseup', () => {
+document.body.addEventListener('touchend', () => {
    isButtonPressed = false
 })
 
 for (let div of divs) {
-   div.onmouseenter = () => {
+   div.addEventListener('mouseenter', () => {
       if (isButtonPressed) {
          div.classList.add('active')
       }
-   }
+   })
+
+   div.addEventListener('touchmove', () => {
+      if (isButtonPressed) {
+         div.classList.add('active')
+      }
+   })
 }
 
 clearButton.onclick = () => {

@@ -1,5 +1,5 @@
 const divs = document.querySelectorAll('.painter>div')
-const clearButton = document.querySelector('#clear')
+const clearButton = document.querySelector('#clear-button')
 
 let isButtonPressed = false
 
@@ -12,11 +12,11 @@ document.body.addEventListener('mouseup', () => {
 })
 
 for (let div of divs) {
-   div.onmouseenter = () => {
+   div.addEventListener('mouseenter', () => {
       if (isButtonPressed) {
          div.classList.add('active')
       }
-   }
+   })
 }
 
 clearButton.onclick = () => {

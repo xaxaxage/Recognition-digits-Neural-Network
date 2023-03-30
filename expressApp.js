@@ -19,16 +19,16 @@ conn()
 
 const app = express()
 
-app.use(express.json())
+// app.use(express.json())
 
-app.use(express.urlencoded())
+// app.use(express.urlencoded())
 
-app.set('view engine', 'ejs')
+// app.set('view engine', 'ejs')
 
-app.use('/public', express.static('public'))
+// app.use('/public', express.static('public'))
 
 app.get('/paint', (req, res) => {
-  res.render('index')
+  res.sendFile(__dirname + '/views/index.html')
 })
 
 let count = 0
@@ -51,4 +51,4 @@ app.post('/dataset', async (req, res) => {
 
 })
 
-app.listen(3000)
+app.listen(3000, '192.168.1.152') 

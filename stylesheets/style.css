@@ -10,6 +10,7 @@ body {
    justify-content: center;
    background: linear-gradient(116.82deg, #5BBAFF 0%, rgba(91, 186, 255, 0.28125) 73.28%, rgba(91, 186, 255, 0.00756072) 97.91%, rgba(91, 186, 255, 0.00517539) 97.92%, rgba(91, 186, 255, 0.00265623) 97.93%);
    height: 100vh;
+   /* position: relative; */
 }
 
 .wrapper {

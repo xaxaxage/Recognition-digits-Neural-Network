@@ -3,13 +3,24 @@ const clearButton = document.querySelector('#clear-button')
 
 let isButtonPressed = false
 
-document.body.addEventListener('mousedown', () => {
+document.body.onmousedown = (e) => {
+   isButtonPressed = true
+   e.preventDefault()
+}
+
+document.body.onmouseup = (e) => {
+   isButtonPressed = false
+   e.preventDefault()
+}
+
+document.body.addEventListener('touchstart', () => {
    isButtonPressed = true
 })
 
-document.body.addEventListener('mouseup', () => {
+document.body.addEventListener('touchend', () => {
    isButtonPressed = false
 })
+
 
 for (let div of divs) {
    div.addEventListener('mouseenter', () => {
@@ -17,7 +28,14 @@ for (let div of divs) {
          div.classList.add('active')
       }
    })
+
+   div.addEventListener('touchmove', () => {
+      if (isButtonPressed) {
+         div.classList.add('active')
+      }
+   })
 }
+
 
 clearButton.onclick = () => {
    const input = []

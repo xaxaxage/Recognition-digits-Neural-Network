@@ -5,12 +5,18 @@
    padding: 0;
 }
 
+html, body {
+   overflow: hidden;
+}
+
 body {
    display: flex;
    justify-content: center;
    background: linear-gradient(116.82deg, #5BBAFF 0%, rgba(91, 186, 255, 0.28125) 73.28%, rgba(91, 186, 255, 0.00756072) 97.91%, rgba(91, 186, 255, 0.00517539) 97.92%, rgba(91, 186, 255, 0.00265623) 97.93%);
+   background-attachment: fixed;
    height: 100vh;
-   /* position: relative; */
+   width: 100vw;
+   position: fixed;
 }
 
 .wrapper {
@@ -20,8 +26,47 @@ body {
    text-align: center;
 }
 
+@media screen and (min-width: 400px) {
+   .wrapper {
+      width: 350px;
+      height: 94vh;
+   }
+
+   .drawn-digit {
+      margin-top: 10px;
+   }
+
+   .digit {
+      width: 35px;
+      height: 35px;
+      font-size: 30px;
+   }
+}
+
+@media screen and (min-width: 900px) {
+   .wrapper {
+     width: 400px;
+     height: 100vh;
+   }
+
+   .drawn-digit {
+      margin-top: 20px;
+   }
+
+   #question {
+      margin-bottom: 10px;
+   }
+
+   .digit {
+      width: 45px;
+      height: 45px;
+      font-size: 40px;
+   }
+}
+
+
 .paint-div-wrapper {
-   width: 400px;
+   width: inherit;
    height: 560px;
    margin-top: 15px;
    background: rgba(0, 133, 255, 0.45);
@@ -85,7 +130,6 @@ body {
 }
 
 .drawn-digit {
-   margin-top: 20px;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -96,7 +140,6 @@ body {
    font-weight: 600;
    font-family: Inter;
    color: white;
-   margin-bottom: 10px;
 }
 
 .digits {
@@ -107,17 +150,17 @@ body {
 }
 
 .digit {
-   width: 45px;
-   height: 45px;
    margin-left: 5px;
    border: 3px solid #FFFFFF;
    border-radius: 10px;
    background: none;
    font-family: Inter;
    font-weight: 600;
-   font-size: 35px;
    color: white;
    cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
 }
 
 .digit:active {

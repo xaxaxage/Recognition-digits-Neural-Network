@@ -55,7 +55,6 @@ setInterval(() => {
 
   const numbers = predict(input)
   
-  console.log(numbers)
   first.textContent = numbers[0][0][0]
   second.textContent = numbers[0][1][0]
   third.textContent = numbers[0][2][0]
